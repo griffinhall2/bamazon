@@ -6,18 +6,15 @@ var connection = mysql.createConnection({
   port: 8889,
   user: "root",
   password: "root",
-  database: "top_songsdb"
+  database: "bamazon"
 });
 
 connection.connect(function(err) {
     if (err) throw err;
-  });
+    console.log('connected as id' + connection.threadId + '\n\n');
+        start();
+});
 
-  function start() {
-    //
-    inquirer.prompt([{
-        type: input,
-        name: id,
-        message: "What is the ID of the product you would like to buy?"
-    }])
-};
+
+
+
